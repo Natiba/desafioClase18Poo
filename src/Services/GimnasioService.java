@@ -15,17 +15,13 @@ public class GimnasioService {
         int menuPpal = 0;
 
         do {
-
-            System.out.println("Ingrese opcion: \n");
-            System.out.println("1. Registrar Cliente \n"
-                    + "2. Obtener Clientes \n"
-                    + "3. Actualizar Cliente \n"
-                    + "4. Eliminar Cliente \n"
-                    + "5. Crear Rutina \n"
-                    + "6. Obtener Rutinas \n"
-                    + "7. Actualizar Rutinas \n"
-                    + "8. Eliminar Rutina \n"
-                    + "9. Salir \n");
+            String opciones = "Ingrese opcion: \n";
+            String model1 = "1. Registrar Cliente \n";
+            String model2 = (!cliS.hayClientes())?"":"2. Obtener Clientes \n3. Actualizar Cliente \n4. Eliminar Cliente \n";
+            String model3 = "5. Crear Rutina \n";
+            String model4 = (!rutiS.hayRutinas())?"":"6. Obtener Rutinas \n7. Actualizar Rutinas \n8. Eliminar Rutina \n";
+            
+            System.out.println(opciones+model1+model2+model3+model4);
 
             menuPpal = sc.nextInt();
 
@@ -34,26 +30,44 @@ public class GimnasioService {
                     cliS.registrarCliente();
                     break;
                 case 2:
+                    if (cliS.hayClientes())
                    // if(cliS.registrarCliente()) Necesito chequear que ya hay algun cliente registrado
-                    cliS.obtenerClientes();
+                        cliS.obtenerClientes();
+                    else
+                        System.out.println("Opcion invalida.");
                     break;
                 case 3:
+                    if (cliS.hayClientes())
                     cliS.actualizarCliente(); // Necesito chequear que ya hay algun cliente registrado
+                    else
+                        System.out.println("Opcion invalida.");
                     break;
                 case 4:
-                    cliS.eliminarCliente(); // Necesito chequear que ya hay algun cliente registrado
+                    if (cliS.hayClientes())
+                        cliS.eliminarCliente(); // Necesito chequear que ya hay algun cliente registrado
+                    else
+                        System.out.println("Opcion Invalida");
                     break;
                 case 5:
                     rutiS.crearRutina();
                     break;
                 case 6:
-                    rutiS.obtenerRutinas();
+                    if (rutiS.hayRutinas())
+                        rutiS.obtenerRutinas();
+                    else
+                        System.out.println("Opcion Invalida");
                     break;
                 case 7:
-
+                    if (rutiS.hayRutinas())
+                        rutiS.actualizarRutinas();
+                    else
+                        System.out.println("Opcion Invalida");
                     break;
                 case 8:
-
+                    if (rutiS.hayRutinas())
+                        rutiS.eliminarRutinas();
+                    else
+                        System.out.println("Opcion Invalida");
                     break;
                 case 9:
                     System.exit(0);  // Para salir del menu
