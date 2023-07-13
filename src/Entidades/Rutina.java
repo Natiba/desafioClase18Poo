@@ -59,9 +59,9 @@ public class Rutina {
         this.descripcion = descripcion;
     }
 
-    @Override
+ @Override
     public String toString() {
-        return "Rutina{" + "ID=" + ID + ", nombre=" + nombre + ", duracion=" + duracion + ", nivelDificultad=" + nivelDificultad + ", descripcion=" + descripcion + '}';
+        return nombre + ":\n ID: " + ID + "\n Duración: " + duracion + "\n Nivel de dificultad: " + nivelDificultad + "\n Descripción: " + descripcion;
     }
     
 }

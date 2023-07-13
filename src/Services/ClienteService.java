@@ -11,12 +11,12 @@ public class ClienteService {
 
     int clientId = 1; // Inicializo ID global
 
-    public Cliente registrarCliente() {
+    public void registrarCliente() {  // Cliente lo cambie x void
 
         Cliente client = new Cliente();
 
         // Aca le tengo que asignar el ID a cada cliente nuevo:
-        client.setId(clientId++);
+        client.setId(clientId++); // el primero es 1
         System.out.println("Id cliente: " + client.getId());
 
         System.out.println("Ingrese nombre del cliente a registrar, por favor");
@@ -34,13 +34,13 @@ public class ClienteService {
         System.out.println("Ingrese objetivo del cliente a registrar, por favor");
         client.setObjetivo(sc.next());
 
-        listaClientes.add(client);
+        listaClientes.add(client);  // retorno implicito
 
         System.out.println("");
         System.out.println("Cliente creado con exito!!");
         System.out.println("----------");
 
-        return client;
+        //return client; // no es necesario retornar el obj cliente
 
     }
 
@@ -146,6 +146,16 @@ public class ClienteService {
 
         }
 
+    }
+    
+    public boolean hayClientes() {
+        
+        if (listaClientes.size() > 0) {
+             return true;
+        } else {
+            return false;
+        }
+        
     }
 
     public void actualizarItem() {

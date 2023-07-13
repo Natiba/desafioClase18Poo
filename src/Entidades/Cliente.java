@@ -69,9 +69,9 @@ public class Cliente {
         this.objetivo = objetivo;
     }
 
-    @Override
+  @Override
     public String toString() {
-        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", peso=" + peso + ", objetivo=" + objetivo + '}';
+        return nombre + ":\n ID: " + id + "\n Edad: " + edad + "\n Peso: " + peso + "\n Altura: " + altura + "\n Objetivo: " + objetivo;
     }
     
 }
